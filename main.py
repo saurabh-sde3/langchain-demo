@@ -1,6 +1,7 @@
 from dotenv import load_dotenv
 from langchain_core.prompts import PromptTemplate
 from langchain_openai import ChatOpenAI
+from langchain_ollama import ChatOllama
 import os
 
 load_dotenv()
@@ -30,6 +31,8 @@ Musk's political activities, views, and statements have made him a polarizing fi
     )
 
     llm = ChatOpenAI(temperature=0, model="gpt-5")
+    # llm = ChatOllama(temperature=1, model="gemma3:270m")
+
     '''
     # this is a Lang chain expression language, it creates a chain of the prompt template and the llm.
     # So, it will pass the output of system prompt template to the llm as input
